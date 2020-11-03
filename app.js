@@ -27,6 +27,32 @@ const app = new App({
 // Start coding here..
 // see https://slack.dev/bolt/
 
+
+app.message('hello', async ({ message, say }) => {
+  // say() sends a message to the channel where the event was triggered
+  await say({
+    blocks: [
+      {
+        "type": "section",
+        "text": {
+          "type": "mrkdwn",
+          "text": `Hey there <@${message.user}>!`
+        },
+        "accessory": {
+          "type": "button",
+          "text": {
+            "type": "plain_text",
+            "text": "Click Me"
+          },
+          "action_id": "button_click"
+        }
+      }
+    ],
+    text: `Hey there <@${message.user}>!`
+  });
+});
+
+
 // https://api.slack.com/apps/{APP_ID}/event-subscriptions
 app.event("app_mention", ({ event, say }) => {
   logger.debug(
