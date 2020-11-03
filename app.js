@@ -40,7 +40,7 @@ app.event("app_mention", ({ event, say }) => {
 
 // https://api.slack.com/apps/{APP_ID}/slash-commands
 // https://api.slack.com/apps/{APP_ID}/interactive-messages
-app.command("/salesforcedemo", async ({ respond, command, ack, say }) => {
+app.command("/salesforcedemodemo", async ({ respond, command, ack, say }) => {
   // コマンドリクエストを確認
 
   ack();
