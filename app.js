@@ -6,7 +6,7 @@ const app = new App({
 });
 
 // Listens to incoming messages that contain "hello"
-app.command("/salesforcedemodemo", async ({ respond, command, ack, say }) => {
+app.command("/salesforcedemo", async ({ respond, command, ack, say }) => {
   // コマンドリクエストを確認
 
   ack();
